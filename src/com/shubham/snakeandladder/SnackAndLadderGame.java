@@ -8,6 +8,7 @@ public class SnackAndLadderGame {
 	private static final int NO_PLAY = 0;
 	private static final int LADDER = 1;
 	private static final int SNACK = 2;
+	private static final int WININGPOSITION = 100;
 	
 	public void ShowPosition() {
 		
@@ -18,11 +19,14 @@ public class SnackAndLadderGame {
 		
 		Random random = new Random();
 		
+		while(playerPosition < WININGPOSITION )
+		{
 			int dieNo = random.nextInt(6)+1;
 			System.out.println("die No="+dieNo);
 			int option = random.nextInt(3);
 			System.out.println("option ="+option);
 			
+			System.out.println("--------------------------");
 			switch(option)
 			{
 			case NO_PLAY:
@@ -35,11 +39,13 @@ public class SnackAndLadderGame {
 				playerPosition = playerPosition - dieNo ;
 				if( playerPosition < 0)
 				{
-					playerPosition = 0;
+					playerPosition =  0;
 				}
 				break;
 			}
-		
+			ShowPosition();
+		}
+			
 	}
 	public static void main(String[] args) {
 		
