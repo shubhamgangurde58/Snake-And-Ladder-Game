@@ -43,6 +43,10 @@ public class SnackAndLadderGame {
 				}
 				break;
 			}
+			if(playerPosition > WININGPOSITION )
+			{
+				playerPosition = playerPosition - dieNo;
+			}
 			ShowPosition();
 		}
 			
