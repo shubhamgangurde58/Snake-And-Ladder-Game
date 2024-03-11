@@ -10,6 +10,7 @@ public class SnackAndLadderGame {
 	private static final int SNACK = 2;
 	private static final int WININGPOSITION = 100;
 	
+	private static int rolldiecount = 0;
 	public void ShowPosition() {
 		
 		System.out.println("Player position = "+playerPosition);
@@ -26,6 +27,7 @@ public class SnackAndLadderGame {
 			int option = random.nextInt(3);
 			System.out.println("option ="+option);
 			
+			rolldiecount += 1; 
 			System.out.println("--------------------------");
 			switch(option)
 			{
@@ -47,8 +49,11 @@ public class SnackAndLadderGame {
 			{
 				playerPosition = playerPosition - dieNo;
 			}
+			
 			ShowPosition();
+			System.out.println("Rolling die count = "+rolldiecount);
 		}
+		
 			
 	}
 	public static void main(String[] args) {
@@ -58,8 +63,8 @@ public class SnackAndLadderGame {
 		SnackAndLadderGame snackandladdergame1 = new SnackAndLadderGame();
 		 snackandladdergame1. ShowPosition();
 		 snackandladdergame1.PlayGame();
-		 snackandladdergame1. ShowPosition();
-		
+		// snackandladdergame1. ShowPosition();
+		 
 		 
 	}
 
